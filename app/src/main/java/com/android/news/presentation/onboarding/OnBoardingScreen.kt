@@ -32,10 +32,10 @@ import com.android.news.presentation.onboarding.components.PageIndicator
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
-@Preview(name = "Light", showBackground = true)
-@Preview(name = "Night", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    event : (OnBoardingEvent) ->Unit
+) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(scrollState)
@@ -87,8 +87,8 @@ fun OnBoardingScreen() {
                 }
                 NewsButton(buttonState.value[1]) {
                     scope.launch {
-                        if (pagerState.currentPage == 3) {
-                            // navigate to HomeScreen
+                        if (pagerState.currentPage == 2) {
+                            event(OnBoardingEvent.SaveAppEntry)
                         } else {
                             pagerState.animateScrollToPage(page = pagerState.currentPage + 1)
                         }
