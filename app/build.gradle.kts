@@ -36,6 +36,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -43,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -54,7 +55,7 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx.v1120)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -71,43 +72,42 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //Splash Api
+    // SplashScreen API
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-    //Compose Navigation
-    val nav_version = "2.6.0"
+    // Compose Navigation
+    val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
-    //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    // Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-compiler:2.51")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
-    //Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Coil (for Jetpack Compose)
+    implementation("io.coil-kt:coil-compose:2.5.0")
 
-    //Coil
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
 
-    //Datastore
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    // Compose Foundation
+    implementation("androidx.compose.foundation:foundation:1.6.2")
 
-    //Compose Foundation
-    implementation("androidx.compose.foundation:foundation:1.4.3")
+    // Accompanist (System UI Controller)
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
 
-    //Accompanist
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
-
-    //Paging 3
-    val paging_version = "3.1.1"
+    // Paging 3
+    val paging_version = "3.3.0"
     implementation("androidx.paging:paging-runtime:$paging_version")
-    implementation("androidx.paging:paging-compose:3.2.0-rc01")
+    implementation("androidx.paging:paging-compose:3.3.0")
 
-    //Room
-    val room_version = "2.5.2"
+    // Room
+    val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.room:room-ktx:$room_version")
 }
