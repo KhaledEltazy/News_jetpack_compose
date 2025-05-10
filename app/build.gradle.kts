@@ -6,6 +6,8 @@ plugins {
     id("kotlin-parcelize")
 }
 
+val apiKey = project.findProperty("NEWS_API_KEY") ?: ""
+
 android {
     namespace = "com.android.news"
     compileSdk = 35
@@ -21,6 +23,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "NEWS_API_KEY", "\"${apiKey}\"")
     }
 
     buildTypes {

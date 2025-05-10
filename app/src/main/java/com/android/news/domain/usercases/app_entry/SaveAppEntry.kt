@@ -1,4 +1,4 @@
-package com.android.news.domain.usercases
+package com.android.news.domain.usercases.app_entry
 
 import com.android.news.domain.manger.LocalUserManger
 
