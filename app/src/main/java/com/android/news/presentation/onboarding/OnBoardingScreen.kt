@@ -1,6 +1,5 @@
 package com.android.news.presentation.onboarding
 
-import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.VerticalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -22,9 +20,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.android.news.presentation.Dimens.MediumPadding2
-import com.android.news.presentation.Dimens.PageIndicatorWidth
+import com.android.news.ui.theme.unit.Dimens.MediumPadding2
+import com.android.news.ui.theme.unit.Dimens.PageIndicatorWidth
 import com.android.news.presentation.common.NewsButton
 import com.android.news.presentation.common.NewsTextButton
 import com.android.news.presentation.onboarding.components.OnBoardingPage

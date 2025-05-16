@@ -29,8 +29,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.android.news.R
-import com.android.news.presentation.Dimens.MediumPadding1
-import com.android.news.presentation.Dimens.MediumPadding2
+import com.android.news.ui.theme.unit.Dimens.MediumPadding1
+import com.android.news.ui.theme.unit.Dimens.MediumPadding2
 import com.android.news.presentation.onboarding.Page
 import com.android.news.presentation.onboarding.pages
 import com.android.news.ui.theme.NewsTheme

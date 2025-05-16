@@ -1,4 +1,4 @@
-package com.android.news.presentation
+package com.android.news.ui.theme.unit
 
 import androidx.compose.ui.unit.dp
 
@@ -8,4 +8,12 @@ object Dimens {
     val PageIndicatorWidth = 52.dp
 
     val IndicatorSize = 14.dp
+
+    val ArticleCardSize = 96.dp
+
+    val ExtraSmallPadding =  3.dp
+    val ExtraSmallPadding2 =  6.dp
+
+    val SmallIconSize = 11.dp
+
 }
