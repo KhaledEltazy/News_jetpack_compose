@@ -11,6 +11,7 @@ import com.android.news.domain.usercases.app_entry.ReadAppEntry
 import com.android.news.domain.usercases.app_entry.SaveAppEntry
 import com.android.news.domain.usercases.news.GetNews
 import com.android.news.domain.usercases.news.NewsUseCases
+import com.android.news.domain.usercases.news.SearchNews
 import com.android.news.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -61,7 +62,8 @@ object AppModule {
         newsRepository: NewsRepository
     ) : NewsUseCases {
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 }
