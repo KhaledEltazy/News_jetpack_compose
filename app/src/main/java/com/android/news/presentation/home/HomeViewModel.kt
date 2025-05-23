@@ -3,7 +3,7 @@ package com.android.news.presentation.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.android.news.domain.usercases.news.NewsUseCases
+import com.android.news.domain.news_use_cases.news.NewsUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -10,15 +10,16 @@ import com.android.news.data.remote.NewsApi
 import com.android.news.data.repository.NewsRepositoryImpl
 import com.android.news.domain.manger.LocalUserManger
 import com.android.news.domain.repository.NewsRepository
-import com.android.news.domain.usercases.app_entry.AppEntryUseCases
-import com.android.news.domain.usercases.app_entry.ReadAppEntry
-import com.android.news.domain.usercases.app_entry.SaveAppEntry
-import com.android.news.domain.usercases.news.DeleteArticle
-import com.android.news.domain.usercases.news.GetNews
-import com.android.news.domain.usercases.news.NewsUseCases
-import com.android.news.domain.usercases.news.SearchNews
-import com.android.news.domain.usercases.news.SelectArticles
-import com.android.news.domain.usercases.news.UpsertArticle
+import com.android.news.domain.news_use_cases.app_entry.AppEntryUseCases
+import com.android.news.domain.news_use_cases.app_entry.ReadAppEntry
+import com.android.news.domain.news_use_cases.app_entry.SaveAppEntry
+import com.android.news.domain.news_use_cases.news.DeleteArticle
+import com.android.news.domain.news_use_cases.news.SelectArticle
+import com.android.news.domain.news_use_cases.news.GetNews
+import com.android.news.domain.news_use_cases.news.NewsUseCases
+import com.android.news.domain.news_use_cases.news.SearchNews
+import com.android.news.domain.news_use_cases.news.SelectArticles
+import com.android.news.domain.news_use_cases.news.UpsertArticle
 import com.android.news.util.Constants.BASE_URL
 import com.android.news.util.Constants.DATABASE_NAME
 import dagger.Module
@@ -75,7 +76,8 @@ object AppModule {
             searchNews = SearchNews(newsRepository),
             upsertArticle = UpsertArticle(newsDao),
             deleteArticle = DeleteArticle(newsDao),
-            selectArticles = SelectArticles(newsDao)
+            selectArticles = SelectArticles(newsDao),
+            selectArticle = SelectArticle(newsDao)
         )
     }
 
