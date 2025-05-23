@@ -13,9 +13,12 @@ import com.android.news.domain.repository.NewsRepository
 import com.android.news.domain.usercases.app_entry.AppEntryUseCases
 import com.android.news.domain.usercases.app_entry.ReadAppEntry
 import com.android.news.domain.usercases.app_entry.SaveAppEntry
+import com.android.news.domain.usercases.news.DeleteArticle
 import com.android.news.domain.usercases.news.GetNews
 import com.android.news.domain.usercases.news.NewsUseCases
 import com.android.news.domain.usercases.news.SearchNews
+import com.android.news.domain.usercases.news.SelectArticles
+import com.android.news.domain.usercases.news.UpsertArticle
 import com.android.news.util.Constants.BASE_URL
 import com.android.news.util.Constants.DATABASE_NAME
 import dagger.Module
@@ -64,11 +67,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ) : NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            selectArticles = SelectArticles(newsDao)
         )
     }
 
